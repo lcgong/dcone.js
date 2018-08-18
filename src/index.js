@@ -1,34 +1,20 @@
-//
-
-import { snapshot } from "./snapshot";
-
 import {
     isObject,
     isList,
     branch,
-    createDObject,
-    DObjectCone,
     keys,
     size
 } from "./dobject";
 
 import {
-    loadNodeFromJS,
-    exportNodetoJS
-} from "./jsobj";
+    Model,
+    action
+} from "./model";
 
-
-
-function fromJS(jsobj) {
-
-    const root = loadNodeFromJS(jsobj);
-    return createDObject(new DObjectCone(root), root, '', root);
-}
-
-function toJS(dobj) {
-    return exportNodetoJS(dobj.__stub.node);
-
-}
+import {
+    fromJS,
+    toJS,
+} from "./common";
 
 
 export default {
@@ -39,6 +25,8 @@ export default {
     branch,
     branch,
     keys,
-    size
+    size,
+    //------------------
+    Model,
+    action,
 };
-

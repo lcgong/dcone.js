@@ -57,7 +57,6 @@ function clearConeList(cone, path) {
 
 function unshiftConeListItem(cone, path, ...values) {
 
-
     return applyConeIndexedItem(cone, path, null, (object, index) => {
         const changeset = [];
         let newidx = 0;
