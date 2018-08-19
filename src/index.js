@@ -1,5 +1,5 @@
 import {
-    isObject,
+    isMap,
     isList,
     branch,
     keys,
@@ -16,13 +16,11 @@ import {
     toJS,
 } from "./common";
 
-
 export default {
     fromJS,
     toJS,
-    isObject,
+    isMap,
     isList,
-    branch,
     branch,
     keys,
     size,

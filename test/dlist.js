@@ -28,9 +28,9 @@ test("dlist of dobject", () => {
 
     let obj = D.fromJS([{ a: 123 }, { a: 456 }, 789]);
 
-    expect(D.isObject(obj[0])).toBeTruthy();
-    expect(D.isObject(obj[1])).toBeTruthy();
-    expect(D.isObject(obj[2])).toBeFalsy();
+    expect(D.isMap(obj[0])).toBeTruthy();
+    expect(D.isMap(obj[1])).toBeTruthy();
+    expect(D.isMap(obj[2])).toBeFalsy();
 
     expect(obj[0].a).toBe(123);
     expect(obj[1].a).toBe(456);
@@ -40,7 +40,7 @@ test("dlist of dobject", () => {
     obj = D.fromJS({ a: 123, b: [{ a: 456 }, 789] });
 
     expect(D.isList(obj.b)).toBeTruthy();
-    expect(D.isObject(obj.b[0])).toBeTruthy();
+    expect(D.isMap(obj.b[0])).toBeTruthy();
     expect(obj.b[0].a).toBe(456);
     expect(obj.b[1]).toBe(789);
 

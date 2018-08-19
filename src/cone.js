@@ -41,7 +41,7 @@ class DNode {
     }
 }
 
-class DObjectNode extends DNode {
+class DMapNode extends DNode {
 
 }
 
@@ -287,7 +287,7 @@ function isIdenticalIn(childRoot, childPath, parentRoot, parentPath) {
 
 export {
     DNode,
-    DObjectNode,
+    DMapNode,
     DListNode,
     Cone,
     isIdenticalIn,

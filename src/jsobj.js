@@ -14,7 +14,7 @@ import {
 
 import {
     DNode,
-    DObjectNode,
+    DMapNode,
     DListNode
 } from "./cone";
 
@@ -28,7 +28,7 @@ function loadNodeFromJS(jsobj) {
             entries.push([k, loadNodeFromJS(v)]);
         }
 
-        return new DObjectNode(ImmutableMap(entries));
+        return new DMapNode(ImmutableMap(entries));
 
     } else if (isArrayObject(jsobj)) {
 
@@ -46,7 +46,7 @@ function loadNodeFromJS(jsobj) {
 }
 
 function exportNodetoJS(node) {
-    if (node instanceof DObjectNode) {
+    if (node instanceof DMapNode) {
 
         let jsobj = {};
         for (let [name, item] of node.object.entries()) {

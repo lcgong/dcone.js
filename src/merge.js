@@ -1,4 +1,4 @@
-import { DObjectNode, DListNode } from "./cone";
+import { DMapNode, DListNode } from "./cone";
 import { NOT_SET_VALUE } from "./utils";
 import { listDiff } from "./listdiff";
 
@@ -23,9 +23,9 @@ function diff(newNode, oldNode) {
         return; // no changes
     }
 
-    if (newNode instanceof DObjectNode) {
-        if (oldNode instanceof DObjectNode) {
-            return diffDObjectNodes(newNode, oldNode, diff);
+    if (newNode instanceof DMapNode) {
+        if (oldNode instanceof DMapNode) {
+            return diffDMapNodes(newNode, oldNode, diff);
         }
 
         // 前后类型不一致，直接判定发生变更
@@ -73,7 +73,7 @@ function _diffPropertyNames(newNode, oldNode) {
     return [added, chked, deled];
 }
 
-function diffDObjectNodes(newNode, oldNode, diffFn) {
+function diffDMapNodes(newNode, oldNode, diffFn) {
     let [added, chked, deled] = _diffPropertyNames(newNode, oldNode);
 
     let changeset = [];

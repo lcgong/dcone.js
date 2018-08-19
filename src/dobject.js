@@ -7,7 +7,7 @@ import {
 import {
     Cone,
     DNode,
-    DObjectNode,
+    DMapNode,
     DListNode,
     _getValue,
     pathJoin,
@@ -92,8 +92,8 @@ function getValueOfStubObject(stub, name, notSetValue) {
 function createDObject(cone, root, path, node) {
 
     let dobjectConstructor;
-    if (node instanceof DObjectNode) {
-        dobjectConstructor = DObject;
+    if (node instanceof DMapNode) {
+        dobjectConstructor = DMap;
     } else if (node instanceof DListNode) {
         dobjectConstructor = DList;
     } else throw new TypeError('should be a DNode')
@@ -157,7 +157,7 @@ class DObjectProxy {
     }
 }
 
-class DObject extends DObjectProxy {
+class DMap extends DObjectProxy {
 
     constructor(stub) {
 
@@ -315,8 +315,8 @@ class DList extends DObjectProxy {
 }
 
 
-function isObject(obj){
-    return obj instanceof DObject;
+function isMap(obj){
+    return obj instanceof DMap;
 }
 
 function isList(obj) {
@@ -326,8 +326,8 @@ function isList(obj) {
 export {
     DObjectCone,
     DList,
-    DObject,
-    isObject,
+    DMap,
+    isMap,
     isList,
     branch,
     createDObject,

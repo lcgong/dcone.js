@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 
 // record, object, array, string, boolean, number, null
 let schema = {
@@ -12,10 +11,5 @@ let schema = {
 };
 
 // schema
-
-
-annotate('.')
-
-// .properties.age
 
 
